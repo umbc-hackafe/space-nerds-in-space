@@ -220,7 +220,7 @@ SHADERS=${SHADERSRCDIR}/color_by_w.frag \
 	${SHADERSRCDIR}/wireframe-transparent-sphere-clip.vert \
 	${SHADERSRCDIR}/wireframe_transparent.vert
 
-MANSRCDIR=.
+MANSRCDIR=doc
 MANPAGES=${MANSRCDIR}/snis_client.6.gz ${MANSRCDIR}/snis_server.6.gz
 MANDIR=${DESTDIR}/${PREFIX}/share/man/man6
 
@@ -681,11 +681,11 @@ test-obj-parser:	test-obj-parser.c stl_parser.o mesh.o mtwist.o mathutils.o matr
 
 test :	test-matrix test-space-partition test-marshal test-quat test-fleet test-mtwist test-commodities
 
-snis_client.6.gz:	snis_client.6
-	gzip -9 - < snis_client.6 > snis_client.6.gz
+doc/snis_client.6.gz:	doc/snis_client.6
+	gzip -9 - < doc/snis_client.6 > doc/snis_client.6.gz
 
-snis_server.6.gz:	snis_server.6
-	gzip -9 - < snis_server.6 > snis_server.6.gz
+doc/snis_server.6.gz:	doc/snis_server.6
+	gzip -9 - < doc/snis_server.6 > doc/snis_server.6.gz
 
 install:	${PROGS} ${MODELS} ${AUDIOFILES} ${TEXTURES} \
 		${MATERIALS} ${CONFIGFILES} ${SHADERS} ${LUASCRIPTS} ${MANPAGES} ${SSGL}
